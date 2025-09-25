@@ -6,6 +6,8 @@ __repr__	            Compute “official” string representation / repr(obj)	bl
 __str__	                Pretty print object / str(obj) / print(obj)	blog; docs
 __bytes__	            bytes(obj)	docs
 __format__	            Custom string formatting	blog; docs
+__name__                give the defined name of a module, class or function
+__clas__                reference to the object’s class
 __lt__	                obj < ...	docs
 __le__	                obj <= ...	docs
 __eq__	                obj == ...	docs
