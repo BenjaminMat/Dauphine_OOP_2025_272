@@ -21,6 +21,7 @@ import math
 
 from exercise.s3.resource.instrument import Instrument
 from exercise.s3.resource.quote import Quote
+from exercise.s3.resource.position import Position
 
 
 """
@@ -88,7 +89,6 @@ Portfolio Summary: Implement the portfolio_position_summary method. This method 
 import unittest
 
 class TestPortfolio(unittest.TestCase):
-
     def setUp(self):
         # Set up the instruments and quotes
         self.last_date_asset_1 = datetime(2025, 8, 29)
@@ -122,13 +122,13 @@ class TestPortfolio(unittest.TestCase):
 
         self.last_date_asset_3 = datetime(2025, 8, 30)
         self.last_close_asset_3 = 417.14
-        self.equity_4.update_price(Quote(self.last_date_asset_3, self.last_close_asset_3))
+        self.equity_3.update_price(Quote(self.last_date_asset_3, self.last_close_asset_3))
 
         self.last_date_asset_4 = datetime(2025, 8, 30)
         self.last_close_asset_4 = 417.14
         self.equity_4.update_price(Quote(self.last_date_asset_4, self.last_close_asset_4))
 
-        # Setup the portfolio strategy and portfolio
+        # Set up the portfolio strategy and portfolio
         self.pft_strategy = EqualWeightStrategy()
         self.portfolio = Portfolio("Tech Portfolio", "USD", 1000000, 10000, self.pft_strategy)
         self.portfolio.initialize_position_from_instrument_list([self.equity_1, self.equity_2, self.equity_3,
@@ -139,10 +139,11 @@ class TestPortfolio(unittest.TestCase):
         summary = self.portfolio.portfolio_position_summary()
         expected_data = {
             "Ticker": ['AAPL', 'MSFT', 'NVDA', 'GOOGLE'],
-            "Weight": [0, 0, 0, 0],
-            "Quantity": [0, 0, 0, 0],
+            "Weight": [0., 0., 0., 0.],
+            "Quantity": [0., 0., 0., 0.],
             "Last close": [229.0, 417.14, 417.14, 417.14]
         }
+
         expected_df = pd.DataFrame(expected_data)
         pd.testing.assert_frame_equal(summary, expected_df)
 
@@ -168,8 +169,6 @@ class TestPortfolio(unittest.TestCase):
         expected_df = pd.DataFrame(expected_data)
 
         pd.testing.assert_frame_equal(summary, expected_df)
-
-
 
 def run_tests():
     unittest.main(argv=[''], verbosity=2, exit=False)

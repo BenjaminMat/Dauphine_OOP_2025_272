@@ -49,15 +49,6 @@ class FinancialAsset:
             raise NegativePriceException(new_quote)
 
 
-last_date, last_close = datetime.now(), 175.0
-equity_last_quote = Quote(last_date, last_close)
-equity = FinancialAsset('AAPL', equity_last_quote, 'USD')
-
-last_date2, last_close2 = datetime.now(), -200
-equity_last_quote2 = Quote(last_date2, last_close2)
-equity.update_last_quote(equity_last_quote2)
-
-
 class TestFinancialAsset(unittest.TestCase):
 
     def setUp(self):

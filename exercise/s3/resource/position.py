@@ -4,7 +4,7 @@ from exercise.s3.resource.instrument import Instrument
 
 
 class Position:
-    def __init__(self, instrument: Instrument, date: datetime = datetime.now(), weight: float = 0, quantity: float = 0):
+    def __init__(self, instrument: Instrument, date: datetime = datetime.now(), weight: float = 0., quantity: float = 0.):
         self.instrument = instrument
         self.date = date
         self.weight = weight
