@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from exercise.s3.resource.instrument import Instrument
+from exercise.s3.ressource.instrument import Instrument
 
 
 class Position:

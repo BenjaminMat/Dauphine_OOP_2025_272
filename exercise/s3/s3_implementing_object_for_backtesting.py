@@ -19,10 +19,9 @@ import pandas as pd
 from datetime import datetime
 import math
 
-from exercise.s3.resource.instrument import Instrument
-from exercise.s3.resource.quote import Quote
-from exercise.s3.resource.position import Position
-
+from exercise.s3.ressource.quote import Quote
+from exercise.s3.ressource.instrument import Instrument
+from exercise.s3.ressource.position import Position
 
 """
 PART I: Creating the meta class strategy and one specific strategy:

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from exercise.s3.resource.quote import Quote
+from exercise.s3.ressource.quote import Quote
 
 
 class Instrument:
