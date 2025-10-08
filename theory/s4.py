@@ -555,6 +555,9 @@ class Date:
         self.month = month
         self.day = day
 
+    def __repr__(self):
+        return f"Date(year={self.year}, month={self.month}, day={self.day})"
+
     @classmethod
     def from_string(cls, date_string):
         year, month, day = map(int, date_string.split('-'))
