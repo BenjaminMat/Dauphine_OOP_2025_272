@@ -40,12 +40,9 @@ Create a derived class EqualWeightStrategy from Strategy:
 
 To Implement the generate_signals method:
     The method should calculate equal-weight signals for each ticker by dividing 1 by the total number of tickers.
-    The input of the method could be either a list or a dict of ticker. 
     It should return a dictionary where each ticker has an equal weight as its signal.
 """
-
-# TODO: Implement here the Part I
-
+#TODO: implement abstract and derived class
 
 """
 Part II : Creating the Portfolio class:
@@ -55,7 +52,7 @@ Class Attributes: Based on the provided code framework, create a Portfolio class
                 currency: The currency in which the portfolio is denominated.
                 aum: Assets Under Management.
                 nav : The last net asset value computed for the portfolio
-                historical_nav: A list that keeps track of the historical Net Asset Values.
+                historical_nav: A dict that keeps track of the historical Net Asset Values.
                 positions: A list of Position objects representing the portfolio’s assets.
                 historical_positions : A dict date as key and and dict of positions for this date. 
                 strategy: A strategy object, an instance of a class derived from the Strategy class.

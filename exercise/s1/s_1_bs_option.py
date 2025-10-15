@@ -3,11 +3,11 @@ from scipy.stats import norm
 
 
 class Option:
-    def __init__(self, S: float, K: float, r: float, T: float, sigma: float):
-        self.S = S
-        self.K = K
+    def __init__(self, s: float, k: float, r: float, ttm: float, sigma: float):
+        self.S = s
+        self.K = k
         self.r = r
-        self.T = T
+        self.T = ttm
         self.sigma = sigma
 
     def d1(self):
@@ -64,8 +64,8 @@ class Put(Option):
 
 
 if __name__ == "__main__":
-    call = Call(S=200, K=250, r=0.05, T=1.0, sigma=0.15)
-    put  = Put (S=200, K=250, r=0.05, T=1.0, sigma=0.15)
+    call = Call(s=200, k=250, r=0.05, ttm=1.0, sigma=0.15)
+    put  = Put (s=200, k=250, r=0.05, ttm=1.0, sigma=0.15)
 
     print(f"Call price: {call.price():.2f}")
     print(f"Put  price: {put.price():.2f}")
