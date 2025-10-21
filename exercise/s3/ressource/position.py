@@ -17,3 +17,6 @@ class Position:
             self.weight = weight
         if quantity is not None:
             self.quantity = quantity
+
+if __name__ == "__main__":
+   pass

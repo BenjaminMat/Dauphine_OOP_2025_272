@@ -31,3 +31,7 @@ class Instrument:
         df = pd.DataFrame(data)
         df.set_index('Date', inplace=True)
         return df
+
+
+if __name__ == "__main__":
+   pass
